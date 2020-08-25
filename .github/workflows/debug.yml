@@ -1,0 +1,10 @@
+name: debug
+
+on: [pull_request]
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo
+        run: echo $GITHUB_REF
