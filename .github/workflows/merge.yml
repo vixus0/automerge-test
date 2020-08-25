@@ -15,7 +15,7 @@ jobs:
           echo "${{ github.event.check_suite.head_branch }}"
   automerge:
     runs-on: ubuntu-latest
-    if: github.ref == 'master' && github.event.check_suite.conclusion == 'success' && (startsWith(github.event.check_suite.head_branch, 'hotfix/') || github.event.check_suite.head_branch == 'develop')
+    if: github.ref == 'refs/heads/master' && github.event.check_suite.conclusion == 'success' && (startsWith(github.event.check_suite.head_branch, 'hotfix/') || github.event.check_suite.head_branch == 'develop')
     steps:
       - name: automerge
         uses: "pascalgn/automerge-action@f81beb99aef41bb55ad072857d43073fba833a98"
