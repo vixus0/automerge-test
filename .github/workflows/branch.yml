@@ -1,0 +1,19 @@
+name: checks
+
+on:
+  check_suite:
+    types: [completed]
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo
+        run: |
+          echo "${{ github.ref }}"
+          echo "${{ github.head_ref }}"
+          echo "${{ github.base_ref }}"
+          echo "${{ github.event.check_suite.conclusion }}"
+      - name: green
+        if: github.event.check_suite.conclusion == 'success'
+        run: echo GREEN
