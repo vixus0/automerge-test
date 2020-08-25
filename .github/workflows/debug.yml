@@ -7,4 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echo
-        run: echo $GITHUB_REF
+        run: |
+          echo $GITHUB_REF
+          echo $GITHUB_HEAD_REF
+          echo "${{ github.ref }}"
+          echo "${{ github.head_ref }}"
+          echo "${{ github.event }}"
