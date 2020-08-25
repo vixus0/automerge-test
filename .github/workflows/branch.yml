@@ -14,6 +14,7 @@ jobs:
           echo "${{ github.head_ref }}"
           echo "${{ github.base_ref }}"
           echo "${{ github.event.check_suite.conclusion }}"
+          echo "${{ github.event.check_suite.head_branch }}"
       - name: green
         if: github.event.check_suite.conclusion == 'success'
         run: echo GREEN
