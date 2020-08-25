@@ -1,4 +1,4 @@
-name: checks
+name: automerge
 
 on:
   check_suite:
